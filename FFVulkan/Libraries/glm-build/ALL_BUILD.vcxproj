@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{79939DD7-9FBA-3DBC-9D1E-990255E915AE}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm -BC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build --check-stamp-file C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeSystem.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\feature_tests.cxx;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glm.pc.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\CMakePackageConfigHelpers.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\GNUInstallDirs.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmBuildConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake_uninstall.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm -BC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build --check-stamp-file C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeSystem.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\feature_tests.cxx;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glm.pc.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\CMakePackageConfigHelpers.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\GNUInstallDirs.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmBuildConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake_uninstall.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm -BC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build --check-stamp-file C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeSystem.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\feature_tests.cxx;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glm.pc.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\CMakePackageConfigHelpers.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\GNUInstallDirs.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmBuildConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake_uninstall.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm -BC:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build --check-stamp-file C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm-build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/User/source/repos/Vulkan01/Vulkan01/Libraries/glm/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeRCCompiler.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\3.12.2\CMakeSystem.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\feature_tests.cxx;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glm.pc.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\CMakePackageConfigHelpers.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\GNUInstallDirs.cmake;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmBuildConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake\glmConfig.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\cmake_uninstall.cmake.in;C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\ZERO_CHECK.vcxproj">
+      <Project>{5E192EC4-B600-3616-B02A-1338260C3F9F}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\glm\glm_shared.vcxproj">
+      <Project>{1D6003E0-02B0-307C-A6EB-77FFD2016EE7}</Project>
+      <Name>glm_shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\glm\glm_static.vcxproj">
+      <Project>{DF786208-B29D-3436-81B9-45FC0A43DA41}</Project>
+      <Name>glm_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\bug\test-bug_ms_vec_static.vcxproj">
+      <Project>{EA66AB22-E1B0-35FF-883B-FB0E7042C4A6}</Project>
+      <Name>test-bug_ms_vec_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_cpp_constexpr.vcxproj">
+      <Project>{B2D40AC5-924F-34B8-AAAC-44408F49ACC2}</Project>
+      <Name>test-core_cpp_constexpr</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_cpp_defaulted_ctor.vcxproj">
+      <Project>{982B2983-F86E-31AB-A777-9870A333C0B9}</Project>
+      <Name>test-core_cpp_defaulted_ctor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_aligned_gentypes.vcxproj">
+      <Project>{AD601EFD-9CE2-3487-BA23-04E144E58B24}</Project>
+      <Name>test-core_force_aligned_gentypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_ctor_init.vcxproj">
+      <Project>{D72D2A19-28CC-366D-80C3-178A6871BB61}</Project>
+      <Name>test-core_force_ctor_init</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_explicit_ctor.vcxproj">
+      <Project>{A10A0328-F523-345F-8F46-F893FD1EF708}</Project>
+      <Name>test-core_force_explicit_ctor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_inline.vcxproj">
+      <Project>{234D3675-9967-3DD6-92D7-3B932081ED3D}</Project>
+      <Name>test-core_force_inline</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_pure.vcxproj">
+      <Project>{B6610BB1-9580-39E4-99C2-A8909382EE76}</Project>
+      <Name>test-core_force_pure</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_unrestricted_gentype.vcxproj">
+      <Project>{467A4B6B-3103-3DFE-9478-4212FB024AE1}</Project>
+      <Name>test-core_force_unrestricted_gentype</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_force_xyzw_only.vcxproj">
+      <Project>{7A9E02E7-CE4C-3DD9-854E-77345EFF2A8D}</Project>
+      <Name>test-core_force_xyzw_only</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_common.vcxproj">
+      <Project>{DC8F6375-2535-336E-ACC6-E9D2FAB649C1}</Project>
+      <Name>test-core_func_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_exponential.vcxproj">
+      <Project>{772A0F73-FA3E-3825-B7F1-AC7E0262022F}</Project>
+      <Name>test-core_func_exponential</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_geometric.vcxproj">
+      <Project>{E11B1540-D4DD-3D6D-9AAD-D6BE90A95AC6}</Project>
+      <Name>test-core_func_geometric</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_integer.vcxproj">
+      <Project>{D4F3ECA9-B972-3869-AA12-2436660FF278}</Project>
+      <Name>test-core_func_integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_integer_bit_count.vcxproj">
+      <Project>{3B0C0603-F72F-398A-8499-3C90F9A9EEAD}</Project>
+      <Name>test-core_func_integer_bit_count</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_integer_find_lsb.vcxproj">
+      <Project>{F587474B-5DCF-3986-BE6B-BDA2059D68A7}</Project>
+      <Name>test-core_func_integer_find_lsb</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_integer_find_msb.vcxproj">
+      <Project>{0553EBB9-C53D-38BF-B349-D7A717F3D855}</Project>
+      <Name>test-core_func_integer_find_msb</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_matrix.vcxproj">
+      <Project>{0224F70B-55CB-3595-857F-C6CCE932F1E5}</Project>
+      <Name>test-core_func_matrix</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_noise.vcxproj">
+      <Project>{D2A1D46E-6EFD-380F-94FC-E2F208A0774A}</Project>
+      <Name>test-core_func_noise</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_packing.vcxproj">
+      <Project>{0F8700EE-05AB-3E1A-B456-8A4ABB04701D}</Project>
+      <Name>test-core_func_packing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_swizzle.vcxproj">
+      <Project>{A8E7A3AA-3C72-305F-B485-D21406AE72A2}</Project>
+      <Name>test-core_func_swizzle</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_trigonometric.vcxproj">
+      <Project>{F06EC767-95C3-33E6-8ACB-25C7D23378D9}</Project>
+      <Name>test-core_func_trigonometric</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_func_vector_relational.vcxproj">
+      <Project>{765960B5-327D-3FFB-A3D2-DC0DF159A259}</Project>
+      <Name>test-core_func_vector_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_setup_force_cxx98.vcxproj">
+      <Project>{0A8BFA6A-9081-3B63-B5AB-10372C00FB88}</Project>
+      <Name>test-core_setup_force_cxx98</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_setup_force_size_t_length.vcxproj">
+      <Project>{ADDE513D-CD90-3CC2-AF93-5BA29B069589}</Project>
+      <Name>test-core_setup_force_size_t_length</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_setup_message.vcxproj">
+      <Project>{8E412422-4BBC-303F-A352-9930CF9213DB}</Project>
+      <Name>test-core_setup_message</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_setup_platform_unknown.vcxproj">
+      <Project>{8EE0DE69-EAAF-3C81-87AF-2D0E5D3B9875}</Project>
+      <Name>test-core_setup_platform_unknown</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_setup_precision.vcxproj">
+      <Project>{A5D2411F-B09E-31BC-AD28-419CFFFB7021}</Project>
+      <Name>test-core_setup_precision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_aligned.vcxproj">
+      <Project>{DECF448D-BF1B-31D6-B9D8-1D5F1BEA46A8}</Project>
+      <Name>test-core_type_aligned</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_cast.vcxproj">
+      <Project>{A889BC5C-5B23-3E01-B85E-63B2D2526C64}</Project>
+      <Name>test-core_type_cast</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_ctor.vcxproj">
+      <Project>{0218B677-D615-3D47-A30A-E49CF0A05673}</Project>
+      <Name>test-core_type_ctor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_int.vcxproj">
+      <Project>{877402A5-E26B-3BBE-B923-BB449937B8A8}</Project>
+      <Name>test-core_type_int</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_length.vcxproj">
+      <Project>{06BD6FA1-8558-31A2-B45F-88A0727D1301}</Project>
+      <Name>test-core_type_length</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat2x2.vcxproj">
+      <Project>{B31AE62F-5936-32E3-905B-655AF2F240A7}</Project>
+      <Name>test-core_type_mat2x2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat2x3.vcxproj">
+      <Project>{27E86992-284D-3796-A2C9-933871C3D142}</Project>
+      <Name>test-core_type_mat2x3</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat2x4.vcxproj">
+      <Project>{F33EB072-20BF-3145-9FAD-AF10FE21CF43}</Project>
+      <Name>test-core_type_mat2x4</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat3x2.vcxproj">
+      <Project>{75053509-5809-3E30-BA99-0294465A198D}</Project>
+      <Name>test-core_type_mat3x2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat3x3.vcxproj">
+      <Project>{33437A8F-E76F-3406-B612-CC0E0D49C4D9}</Project>
+      <Name>test-core_type_mat3x3</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat3x4.vcxproj">
+      <Project>{AA6EE261-4CFA-303F-8E03-E8706AD1C570}</Project>
+      <Name>test-core_type_mat3x4</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat4x2.vcxproj">
+      <Project>{1490AFA7-2696-3186-A5BF-CD5A6430952C}</Project>
+      <Name>test-core_type_mat4x2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat4x3.vcxproj">
+      <Project>{810EB846-B14A-37EA-AD1D-99B4EC5B50B5}</Project>
+      <Name>test-core_type_mat4x3</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_mat4x4.vcxproj">
+      <Project>{0C5B8C47-0A13-35BA-A5F3-13D43039522E}</Project>
+      <Name>test-core_type_mat4x4</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_vec1.vcxproj">
+      <Project>{93612311-9CD5-39B8-9563-3C19FDD1C13A}</Project>
+      <Name>test-core_type_vec1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_vec2.vcxproj">
+      <Project>{4542D25C-C5F9-34DE-A125-81586F0DCFBF}</Project>
+      <Name>test-core_type_vec2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_vec3.vcxproj">
+      <Project>{E647C131-DFD6-3839-B693-DB55372B7229}</Project>
+      <Name>test-core_type_vec3</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\core\test-core_type_vec4.vcxproj">
+      <Project>{EC4EAF85-9E73-37E4-B5DD-94AC43E6F3A8}</Project>
+      <Name>test-core_type_vec4</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_matrix_relational.vcxproj">
+      <Project>{BEB531A0-6A65-3A3E-AB5F-31B8BA0D5711}</Project>
+      <Name>test-ext_matrix_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_matrix_transform.vcxproj">
+      <Project>{48AEA839-DFE8-3AA2-A852-C4BFC6DB6BBA}</Project>
+      <Name>test-ext_matrix_transform</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_common.vcxproj">
+      <Project>{0FF0B99F-D2A3-31F3-A095-E7D2AA509F91}</Project>
+      <Name>test-ext_quaternion_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_exponential.vcxproj">
+      <Project>{9C64F5C3-E027-3774-9921-81B9B7EA54B8}</Project>
+      <Name>test-ext_quaternion_exponential</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_geometric.vcxproj">
+      <Project>{DBBBCE4D-CAE6-354B-A09C-7F005F57CB08}</Project>
+      <Name>test-ext_quaternion_geometric</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_relational.vcxproj">
+      <Project>{65138D2E-2DB9-30E4-AA50-CF07F5677022}</Project>
+      <Name>test-ext_quaternion_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_transform.vcxproj">
+      <Project>{447BBFB8-3B66-3260-8057-080897120EF1}</Project>
+      <Name>test-ext_quaternion_transform</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_trigonometric.vcxproj">
+      <Project>{CF757644-CF6F-39FE-B620-0CEF1B30DAB1}</Project>
+      <Name>test-ext_quaternion_trigonometric</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_quaternion_type.vcxproj">
+      <Project>{93483FA2-3698-38B5-9F2E-8DADA5896875}</Project>
+      <Name>test-ext_quaternion_type</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_common.vcxproj">
+      <Project>{AB8E340C-77AD-32E3-933B-D01C50DD9C57}</Project>
+      <Name>test-ext_scalar_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_constants.vcxproj">
+      <Project>{D9D8374E-3E6F-3A63-A87C-EF9E103147BE}</Project>
+      <Name>test-ext_scalar_constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_float_sized.vcxproj">
+      <Project>{D847C468-26E6-3B1D-96EB-BCF50A948589}</Project>
+      <Name>test-ext_scalar_float_sized</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_int_sized.vcxproj">
+      <Project>{1517BCFF-79B6-3786-9E9A-02BE4421B8B9}</Project>
+      <Name>test-ext_scalar_int_sized</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_relational.vcxproj">
+      <Project>{AC1DD09D-598D-3FB4-ACC0-A93920CDFC1C}</Project>
+      <Name>test-ext_scalar_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_scalar_uint_sized.vcxproj">
+      <Project>{92375EB4-630E-373C-948E-BFE825EC33FD}</Project>
+      <Name>test-ext_scalar_uint_sized</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vec1.vcxproj">
+      <Project>{C7F23585-EEE9-3BDD-925B-3D6AC147799F}</Project>
+      <Name>test-ext_vec1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vector_bool1.vcxproj">
+      <Project>{63B7D7A6-2538-358A-B9F1-C49E36BA543B}</Project>
+      <Name>test-ext_vector_bool1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vector_common.vcxproj">
+      <Project>{9ACB5B9F-BEB5-3F5F-86BD-DD988EDB41CD}</Project>
+      <Name>test-ext_vector_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vector_iec559.vcxproj">
+      <Project>{4B24D4F2-5703-3F28-B444-B1763C56D023}</Project>
+      <Name>test-ext_vector_iec559</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vector_integer.vcxproj">
+      <Project>{921D0F64-5AAE-3CE9-8788-5690A7BECE38}</Project>
+      <Name>test-ext_vector_integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\ext\test-ext_vector_relational.vcxproj">
+      <Project>{7A832803-ACFC-33B6-B32D-AB7D6F318A05}</Project>
+      <Name>test-ext_vector_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_bitfield.vcxproj">
+      <Project>{CE14DEBB-51D0-32FE-A24D-7DA85213C049}</Project>
+      <Name>test-gtc_bitfield</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_color_space.vcxproj">
+      <Project>{B96BD948-C29E-3AF8-80F9-0A6FF62B60F5}</Project>
+      <Name>test-gtc_color_space</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_constants.vcxproj">
+      <Project>{87BEEE23-D079-33C7-A134-EF8FE94AC90B}</Project>
+      <Name>test-gtc_constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_epsilon.vcxproj">
+      <Project>{B937393C-3BB6-36C9-B3D4-A9C589E996C0}</Project>
+      <Name>test-gtc_epsilon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_integer.vcxproj">
+      <Project>{DE37638C-4DD4-38F8-B7A8-5565AC40171D}</Project>
+      <Name>test-gtc_integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_matrix_access.vcxproj">
+      <Project>{F215AAB5-D223-345E-B3FA-054DC6EB94A8}</Project>
+      <Name>test-gtc_matrix_access</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_matrix_integer.vcxproj">
+      <Project>{D70FC661-FFFF-3688-9F9B-30B1CBFE6C5C}</Project>
+      <Name>test-gtc_matrix_integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_matrix_inverse.vcxproj">
+      <Project>{1E5D7A3D-A932-381D-AA77-61FC20BD84F2}</Project>
+      <Name>test-gtc_matrix_inverse</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_matrix_transform.vcxproj">
+      <Project>{AB6277D5-F721-3505-8ADD-DD3D6E20464E}</Project>
+      <Name>test-gtc_matrix_transform</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_noise.vcxproj">
+      <Project>{943CCA05-4D42-34A5-BD92-3522872D4EDD}</Project>
+      <Name>test-gtc_noise</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_packing.vcxproj">
+      <Project>{7DE4DDB1-BDB0-3AC5-B0B0-3E7FDA228E73}</Project>
+      <Name>test-gtc_packing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_quaternion.vcxproj">
+      <Project>{ED22F540-882D-39EE-B2B0-CFE87D440A74}</Project>
+      <Name>test-gtc_quaternion</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_random.vcxproj">
+      <Project>{20BC6CD7-EDA4-3609-9B7A-32A944BC9563}</Project>
+      <Name>test-gtc_random</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_reciprocal.vcxproj">
+      <Project>{302298D9-4741-3955-8E1B-6D7A15EF6F64}</Project>
+      <Name>test-gtc_reciprocal</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_round.vcxproj">
+      <Project>{2D8B7EAE-EE1E-3C42-9ABB-0197330420BD}</Project>
+      <Name>test-gtc_round</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_type_aligned.vcxproj">
+      <Project>{7E5C89D0-A011-39C1-8851-06AF246CD746}</Project>
+      <Name>test-gtc_type_aligned</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_type_precision.vcxproj">
+      <Project>{92C6E62D-0973-3964-A377-46061377A050}</Project>
+      <Name>test-gtc_type_precision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_type_ptr.vcxproj">
+      <Project>{3C8CAEB1-D904-32DF-B303-9387FF3B7DF7}</Project>
+      <Name>test-gtc_type_ptr</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_ulp.vcxproj">
+      <Project>{C49E44FD-F1C5-336A-81C7-903B70CE65B9}</Project>
+      <Name>test-gtc_ulp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtc\test-gtc_vec1.vcxproj">
+      <Project>{79F1110E-A47C-302F-A723-0AE0CD606E9C}</Project>
+      <Name>test-gtc_vec1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx.vcxproj">
+      <Project>{FC88973F-E24C-31A6-9BF4-0A13C18C8440}</Project>
+      <Name>test-gtx</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_associated_min_max.vcxproj">
+      <Project>{E8AA3708-9B7C-38F4-A721-1E831FC610D9}</Project>
+      <Name>test-gtx_associated_min_max</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_closest_point.vcxproj">
+      <Project>{66DF7169-3A2B-31A3-B467-C15DEBC427A5}</Project>
+      <Name>test-gtx_closest_point</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_color_encoding.vcxproj">
+      <Project>{71092543-F2A7-3095-B363-A4B4CB303546}</Project>
+      <Name>test-gtx_color_encoding</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_color_space.vcxproj">
+      <Project>{009443D7-BDC3-39E0-976D-BA9A2EDC9407}</Project>
+      <Name>test-gtx_color_space</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_color_space_YCoCg.vcxproj">
+      <Project>{DE68483C-9DD8-37B3-B6AE-EB5EFEABC117}</Project>
+      <Name>test-gtx_color_space_YCoCg</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_common.vcxproj">
+      <Project>{69BE6DF5-0B22-3262-AC94-18E478676DCC}</Project>
+      <Name>test-gtx_common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_compatibility.vcxproj">
+      <Project>{8BBA263C-6406-333C-BBC8-2A3B72D9FD0D}</Project>
+      <Name>test-gtx_compatibility</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_component_wise.vcxproj">
+      <Project>{EB9A341F-4BE3-3B63-90E4-B2573B5123CD}</Project>
+      <Name>test-gtx_component_wise</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_dual_quaternion.vcxproj">
+      <Project>{564FB875-6002-3781-BC9D-0F3960A2A699}</Project>
+      <Name>test-gtx_dual_quaternion</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_easing.vcxproj">
+      <Project>{7FEEF0AA-9130-3D9A-A605-F0CE335C25EC}</Project>
+      <Name>test-gtx_easing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_euler_angle.vcxproj">
+      <Project>{9E4F72C0-F10F-34BF-BEF9-713545C6422F}</Project>
+      <Name>test-gtx_euler_angle</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_extend.vcxproj">
+      <Project>{CAD6CDE8-B5D3-3D7E-8733-262F0B35C702}</Project>
+      <Name>test-gtx_extend</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_extended_min_max.vcxproj">
+      <Project>{AF31599A-3E58-302D-B1E7-2BB0581D92B9}</Project>
+      <Name>test-gtx_extended_min_max</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_exterior_product.vcxproj">
+      <Project>{F0023B11-0BA4-34D5-ADD2-273331CB3BC0}</Project>
+      <Name>test-gtx_exterior_product</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_fast_exponential.vcxproj">
+      <Project>{FA2BF27F-17DF-30A5-A310-12215CB699B6}</Project>
+      <Name>test-gtx_fast_exponential</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_fast_square_root.vcxproj">
+      <Project>{F386DB3B-B1A0-3C0E-A175-1F77F7C42200}</Project>
+      <Name>test-gtx_fast_square_root</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_fast_trigonometry.vcxproj">
+      <Project>{CD1AE718-1817-3247-8252-CB786A27ED71}</Project>
+      <Name>test-gtx_fast_trigonometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_functions.vcxproj">
+      <Project>{F878B375-A411-3872-96BC-76670742DEDD}</Project>
+      <Name>test-gtx_functions</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_gradient_paint.vcxproj">
+      <Project>{FD362BBB-5FF2-3892-AFA6-1C1CD3813C7B}</Project>
+      <Name>test-gtx_gradient_paint</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_handed_coordinate_space.vcxproj">
+      <Project>{23E6671C-CDAF-3B3D-A728-E220A7A74D5C}</Project>
+      <Name>test-gtx_handed_coordinate_space</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_integer.vcxproj">
+      <Project>{DC6A821A-6741-3DBC-BD31-08084280DA7B}</Project>
+      <Name>test-gtx_integer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_intersect.vcxproj">
+      <Project>{85883CED-383E-3B99-B84C-093EAB92BE1E}</Project>
+      <Name>test-gtx_intersect</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_io.vcxproj">
+      <Project>{DE7AC039-F5A1-3F55-ADA3-2823FF3343DE}</Project>
+      <Name>test-gtx_io</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_load.vcxproj">
+      <Project>{84F5DFBD-53F5-33FC-8A8F-8EC8E5B74C18}</Project>
+      <Name>test-gtx_load</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_log_base.vcxproj">
+      <Project>{623C72AB-3C73-3687-BD64-7A5AEBAD35DB}</Project>
+      <Name>test-gtx_log_base</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_cross_product.vcxproj">
+      <Project>{4A44879E-97D4-3FF4-A800-9BD2B35A1B9D}</Project>
+      <Name>test-gtx_matrix_cross_product</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_decompose.vcxproj">
+      <Project>{102A5494-7D3E-3F80-BC2A-51CCDC5D5B41}</Project>
+      <Name>test-gtx_matrix_decompose</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_factorisation.vcxproj">
+      <Project>{69654D76-BC71-34A5-B480-BB03B8AB15A5}</Project>
+      <Name>test-gtx_matrix_factorisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_interpolation.vcxproj">
+      <Project>{6E1322B8-75DB-3B56-90C8-545A0CEBF973}</Project>
+      <Name>test-gtx_matrix_interpolation</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_major_storage.vcxproj">
+      <Project>{09AC8DE4-7F0C-356E-82EB-70ED6D22A87D}</Project>
+      <Name>test-gtx_matrix_major_storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_operation.vcxproj">
+      <Project>{832DED48-C086-335D-8AA5-E3A78BA82996}</Project>
+      <Name>test-gtx_matrix_operation</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_query.vcxproj">
+      <Project>{88C2DEFD-FAA3-3B85-A5A5-18A2B9751189}</Project>
+      <Name>test-gtx_matrix_query</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_matrix_transform_2d.vcxproj">
+      <Project>{2DCFA2FD-1DBA-399F-AC0A-CA433F6F9F52}</Project>
+      <Name>test-gtx_matrix_transform_2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_norm.vcxproj">
+      <Project>{CC107B96-247B-3C8C-89B8-0D25FD4974FA}</Project>
+      <Name>test-gtx_norm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_normal.vcxproj">
+      <Project>{B08E8383-3D48-3145-8F49-6546C5CA63B8}</Project>
+      <Name>test-gtx_normal</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_normalize_dot.vcxproj">
+      <Project>{9250A985-C650-3BFE-807B-FF521A1824AD}</Project>
+      <Name>test-gtx_normalize_dot</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_number_precision.vcxproj">
+      <Project>{48E9DC25-9966-3BDE-879A-6BA9D0AA0073}</Project>
+      <Name>test-gtx_number_precision</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_optimum_pow.vcxproj">
+      <Project>{F47C0426-3E7B-3EB0-9B6D-F8863CED58EC}</Project>
+      <Name>test-gtx_optimum_pow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_orthonormalize.vcxproj">
+      <Project>{B9CE39E1-25A6-307E-8710-101B0C0B5C82}</Project>
+      <Name>test-gtx_orthonormalize</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_perpendicular.vcxproj">
+      <Project>{C4F07A3C-7AD0-3F4C-B9D3-33AEF55E4F85}</Project>
+      <Name>test-gtx_perpendicular</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_polar_coordinates.vcxproj">
+      <Project>{C4525D94-CB52-31EA-B757-EB6C1DC1CD79}</Project>
+      <Name>test-gtx_polar_coordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_projection.vcxproj">
+      <Project>{9494A469-60CF-3186-891D-4F499C40D6F5}</Project>
+      <Name>test-gtx_projection</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_quaternion.vcxproj">
+      <Project>{3106263C-AD6A-358B-958D-B424F80071E3}</Project>
+      <Name>test-gtx_quaternion</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_range.vcxproj">
+      <Project>{D83E47FE-4A91-3B44-BD05-8207A0A88DDA}</Project>
+      <Name>test-gtx_range</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_rotate_normalized_axis.vcxproj">
+      <Project>{4C294F33-2F82-38F5-AE4E-30C3B330F06C}</Project>
+      <Name>test-gtx_rotate_normalized_axis</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_rotate_vector.vcxproj">
+      <Project>{1A072F30-3CF0-367F-9D20-9104D2533BF4}</Project>
+      <Name>test-gtx_rotate_vector</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_scalar_multiplication.vcxproj">
+      <Project>{6681B1F6-6651-3B5E-B837-7BE41DDA1E23}</Project>
+      <Name>test-gtx_scalar_multiplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_scalar_relational.vcxproj">
+      <Project>{E768C76C-CFFE-382A-A546-B10E5E37EFBB}</Project>
+      <Name>test-gtx_scalar_relational</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_spline.vcxproj">
+      <Project>{2E62D625-1637-3410-8097-027AF75D2CDD}</Project>
+      <Name>test-gtx_spline</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_string_cast.vcxproj">
+      <Project>{2AD29E0D-8A15-3AF6-99F8-40D71CB67141}</Project>
+      <Name>test-gtx_string_cast</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_texture.vcxproj">
+      <Project>{EBEB0468-A88F-35C3-AA2E-106F6BB1AAB0}</Project>
+      <Name>test-gtx_texture</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_type_aligned.vcxproj">
+      <Project>{4535E084-6A0A-3B25-80E3-B79BEC74A571}</Project>
+      <Name>test-gtx_type_aligned</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_type_trait.vcxproj">
+      <Project>{11A410CF-E128-305E-9BEC-C1B7A94F1737}</Project>
+      <Name>test-gtx_type_trait</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_vec_swizzle.vcxproj">
+      <Project>{EEE25169-B42C-33FA-8CF5-7090EFD63E91}</Project>
+      <Name>test-gtx_vec_swizzle</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_vector_angle.vcxproj">
+      <Project>{F777CA39-A462-39C1-908C-DA7EB3C09858}</Project>
+      <Name>test-gtx_vector_angle</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_vector_query.vcxproj">
+      <Project>{4353A43F-42A6-3869-B986-ED2E2D9DB9A1}</Project>
+      <Name>test-gtx_vector_query</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\gtx\test-gtx_wrap.vcxproj">
+      <Project>{A6950885-2BF3-39B9-9E73-B84CA1EB21BB}</Project>
+      <Name>test-gtx_wrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_matrix_div.vcxproj">
+      <Project>{AE8E42DA-4D9F-3150-AC42-E181DD33C543}</Project>
+      <Name>test-perf_matrix_div</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_matrix_inverse.vcxproj">
+      <Project>{56C5D035-62F4-3585-A2AD-B7E6BF24E37E}</Project>
+      <Name>test-perf_matrix_inverse</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_matrix_mul.vcxproj">
+      <Project>{8CA90FF0-8E7B-3704-8EC0-F0D974EE3EC0}</Project>
+      <Name>test-perf_matrix_mul</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_matrix_mul_vector.vcxproj">
+      <Project>{BABDB866-3D47-303C-9F1A-68020034665D}</Project>
+      <Name>test-perf_matrix_mul_vector</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_matrix_transpose.vcxproj">
+      <Project>{2A2700F1-F363-3F86-9B18-48E2BA86F766}</Project>
+      <Name>test-perf_matrix_transpose</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\Vulkan01\Vulkan01\Libraries\glm-build\test\perf\test-perf_vector_mul_matrix.vcxproj">
+      <Project>{5F9D8552-0AE5-306E-9E06-45D007ADA036}</Project>
+      <Name>test-perf_vector_mul_matrix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
