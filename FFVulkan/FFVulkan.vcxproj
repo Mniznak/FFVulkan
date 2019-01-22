@@ -127,12 +127,16 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="VulkanInstance.cpp" />
+    <ClCompile Include="VulkanLoader.cpp" />
+    <ClCompile Include="VulkanRenderer.cpp" />
     <ClCompile Include="VulkanSurface.cpp" />
     <ClCompile Include="VulkanWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VulkanCommon.h" />
     <ClInclude Include="VulkanInstance.h" />
+    <ClInclude Include="VulkanLoader.h" />
+    <ClInclude Include="VulkanRenderer.h" />
     <ClInclude Include="VulkanSurface.h" />
     <ClInclude Include="VulkanUtilities.h" />
     <ClInclude Include="VulkanWindow.h" />

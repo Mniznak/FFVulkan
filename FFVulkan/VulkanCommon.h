@@ -8,6 +8,11 @@
 namespace vkr
 {
 	using VulkanAllocator = VkAllocationCallbacks * ;
+
+	struct version3i
+	{
+		int major, minor, patch;
+	};
 }
 
 #endif

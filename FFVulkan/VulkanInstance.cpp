@@ -58,17 +58,41 @@ namespace vkr
 
 		TEST(vkCreateInstance(&instInfo, instance->pAllocator, &instance->pHandle));
 
-		if (createInfo.ValidationEnabled)
+		if (createInfo.validationEnabled)
 		{
 			debugMsger = std::make_unique<smartVkDebugMsger>(instance->pHandle);
 
-			if (!createInfo.ValidationInfo.debugUtilCreateInfo.pfnUserCallback)
-				createInfo.ValidationInfo.debugUtilCreateInfo.pfnUserCallback = debugCallback;
+			if (!createInfo.validationInfo.debugUtilCreateInfo.pfnUserCallback)
+				createInfo.validationInfo.debugUtilCreateInfo.pfnUserCallback = debugCallback;
 
-			TEST(CreateDebugUtilsMessengerEXT(instance->pHandle, &createInfo.ValidationInfo.debugUtilCreateInfo, debugMsger->pAllocator, &debugMsger->pHandle));
+			TEST(CreateDebugUtilsMessengerEXT(instance->pHandle, &createInfo.validationInfo.debugUtilCreateInfo, debugMsger->pAllocator, &debugMsger->pHandle));
 		}
 
 		return { std::move(instance), std::move(debugMsger) };
+	}
+
+	VkApplicationInfo VulkanInstance::ApplicationInfo(const char* appName, version3i appVersion, const char* engineName, version3i engineVersion)
+	{
+		VkApplicationInfo appInfo = {};
+		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+		appInfo.pApplicationName = appName;
+		appInfo.applicationVersion = VK_MAKE_VERSION(appVersion.major, appVersion.minor, appVersion.patch);
+		appInfo.pEngineName = engineName;
+		appInfo.engineVersion = VK_MAKE_VERSION(engineVersion.major, engineVersion.minor, engineVersion.patch);
+		appInfo.apiVersion = VK_API_VERSION_1_0;
+
+		return appInfo;
+	}
+
+	VkDebugUtilsMessengerCreateInfoEXT VulkanInstance::debugInfo(PFN_vkDebugUtilsMessengerCallbackEXT callback)
+	{
+		VkDebugUtilsMessengerCreateInfoEXT createInfo{};
+		createInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
+		createInfo.messageSeverity = VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT;
+		createInfo.messageType = VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT;
+		createInfo.pfnUserCallback = callback;
+
+		return createInfo;
 	}
 
 	VkResult VulkanInstance::CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT * pCreateInfo, const VkAllocationCallbacks * pAllocator, VkDebugUtilsMessengerEXT * pCallback)

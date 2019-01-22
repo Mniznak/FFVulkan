@@ -18,7 +18,6 @@ namespace vkr
 
 	struct VulkanSurfaceCreateInfo
 	{
-		pSmartVkSurfaceKHR Surface;
 		const smartVkInstance* pInstance;
 		const smartVulkanWindow* pWindow;
 	};

@@ -30,7 +30,6 @@ namespace vkr
 
 	struct ValidationLayerCreateInfo
 	{
-		const smartVkInstance* pInstance = nullptr;
 		VkDebugUtilsMessengerCreateInfoEXT debugUtilCreateInfo = {};
 	};
 
@@ -39,8 +38,8 @@ namespace vkr
 		VkApplicationInfo appInfo = {};
 		std::vector<const char *>* instanceExtensions;
 		std::vector<const char *>* validationLayers;
-		ValidationLayerCreateInfo ValidationInfo = {};
-		bool ValidationEnabled = false;
+		ValidationLayerCreateInfo validationInfo = {};
+		bool validationEnabled = false;
 	};
 
 	struct GeneratedInstance
@@ -55,6 +54,8 @@ namespace vkr
 		VulkanInstance();
 		~VulkanInstance();
 		GeneratedInstance generateInstance(VulkanInstanceCreateInfo& createInfo);
+		VkApplicationInfo ApplicationInfo(const char* appName, version3i appVersion, const char* engineName, version3i engineVersion);
+		VkDebugUtilsMessengerCreateInfoEXT debugInfo(PFN_vkDebugUtilsMessengerCallbackEXT callback = nullptr);
 	private:
 		VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator,
 			VkDebugUtilsMessengerEXT* pCallback);
