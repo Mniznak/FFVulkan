@@ -29,7 +29,7 @@ namespace vkr
 
 		TEST(glfwCreateWindowSurface(state->pInstance->pHandle, createInfo.pWindow->pHandle, state->pAllocator, &state->pHandle));
 
-		return state;
+		return std::move(state);
 	}
 	
 }
