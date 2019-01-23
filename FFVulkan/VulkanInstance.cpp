@@ -16,11 +16,11 @@ namespace vkr
 			vkDestroyInstance(pHandle, pAllocator);
 	}
 
-	smartVkDebugMsger::smartVkDebugMsger(const smartVkInstance * _pInstance) : pInstance(_pInstance)
+	smartVkDebugMsger::smartVkDebugMsger(const VkInstance _pInstance) : pInstance(_pInstance)
 	{
 	}
 
-	smartVkDebugMsger::smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, const smartVkInstance * _pInstance) :
+	smartVkDebugMsger::smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, VkInstance _pInstance) :
 		pHandle(_pHandle), pAllocator(_pAllocator), pInstance(_pInstance)
 	{
 	}
@@ -29,9 +29,9 @@ namespace vkr
 	{
 		if (pHandle && pInstance)
 		{
-			auto func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(pInstance->pHandle, "vkDestroyDebugUtilsMessengerEXT");
+			auto func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(pInstance, "vkDestroyDebugUtilsMessengerEXT");
 			if (func != nullptr)
-				func(pInstance->pHandle, pHandle, pAllocator);
+				func(pInstance, pHandle, pAllocator);
 		}
 	}	
 

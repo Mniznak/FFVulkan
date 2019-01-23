@@ -51,7 +51,7 @@ namespace vkr
 		pSmartVkPhysicalDevice generatePhysicalDevice(VulkanPhysicalDeviceCreateInfo& createInfo);
 	private:
 		bool isDeviceSuitable(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo & createInfo);
-		void buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, VulkanPhysicalDeviceCreateInfo & createInfo);
+		void buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, const VkPhysicalDevice& device, const VkSurfaceKHR& surface);
 		bool checkDeviceExtensionSupport(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo& createInfo);
 		SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, const VkSurfaceKHR & surface);
 		QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device, const VkSurfaceKHR & surface);

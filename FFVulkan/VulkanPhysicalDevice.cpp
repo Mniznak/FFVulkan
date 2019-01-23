@@ -37,24 +37,24 @@ namespace vkr
 		{
 			if (isDeviceSuitable(createInfo.compelledDevice, createInfo))
 			{
-				buildDeviceSignature(state, createInfo);
+				buildDeviceSignature(state, createInfo.compelledDevice, createInfo.pSurface->pHandle);
 				//state->pHandle = createInfo.compelledDevice;
 				//state->SCSD = querySwapChainSupport(createInfo.compelledDevice, createInfo.pSurface->pHandle);
 				//state->QFI = findQueueFamilies(createInfo.compelledDevice, createInfo.pSurface->pHandle);
 			}
-			else
-				for (const auto& device : devices)
-				{
-					if (isDeviceSuitable(device, createInfo))
-					{
-						buildDeviceSignature(state, createInfo);
-						//state->pHandle = device;
-						//state->SCSD = querySwapChainSupport(device, createInfo.pSurface->pHandle);
-						//state->QFI = findQueueFamilies(device, createInfo.pSurface->pHandle);
-						break;
-					}
-				}
 		}
+		if (state->pHandle == VK_NULL_HANDLE)
+			for (const auto& device : devices)
+			{
+				if (isDeviceSuitable(device, createInfo))
+				{
+					buildDeviceSignature(state, device, createInfo.pSurface->pHandle);
+					//state->pHandle = device;
+					//state->SCSD = querySwapChainSupport(device, createInfo.pSurface->pHandle);
+					//state->QFI = findQueueFamilies(device, createInfo.pSurface->pHandle);
+					break;
+				}
+			}
 		TEST(state->pHandle != VK_NULL_HANDLE);
 
 		return std::move(state);
@@ -76,11 +76,11 @@ namespace vkr
 		return indices.isComplete() && extensionsSupported && swapChainAdequate;
 	}
 
-	void VulkanPhysicalDevice::buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, VulkanPhysicalDeviceCreateInfo & createInfo)
+	void VulkanPhysicalDevice::buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, const VkPhysicalDevice& device, const VkSurfaceKHR& surface)
 	{
-		pPhysicalDevice->pHandle = createInfo.compelledDevice;
-		pPhysicalDevice->SCSD = querySwapChainSupport(createInfo.compelledDevice, createInfo.pSurface->pHandle);
-		pPhysicalDevice->QFI = findQueueFamilies(createInfo.compelledDevice, createInfo.pSurface->pHandle);
+		pPhysicalDevice->pHandle = device;
+		pPhysicalDevice->SCSD = querySwapChainSupport(device, surface);
+		pPhysicalDevice->QFI = findQueueFamilies(device, surface);
 	}
 
 	bool VulkanPhysicalDevice::checkDeviceExtensionSupport(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo& createInfo)

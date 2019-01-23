@@ -4,11 +4,7 @@
 
 #include "VulkanLogicalDevice.h"
 
-#ifndef NDEBUG
-const bool DebugMode = true;
-#else
-const bool DebugMode = false;
-#endif
+
 
 namespace vkr
 {
@@ -23,8 +19,9 @@ namespace vkr
 		version3i engineVersion = { 1,0,0 };
 		std::vector<const char*> requestedInstanceExtensions = {};
 		std::vector<const char*> requestedLayers = {};
-		VkPhysicalDevice compelledDevice = VK_NULL_HANDLE;
+		VkPhysicalDevice requestedPhysicalDevice = VK_NULL_HANDLE;
 		std::vector<const char*> requestedDeviceExtensions = {};
+		bool ValidationEnabled = false;
 	};
 
 	struct VulkanState

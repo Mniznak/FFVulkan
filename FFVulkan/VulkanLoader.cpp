@@ -20,7 +20,7 @@ namespace vkr
 		wCreateInfo.name = createInfo.appName;
 
 		auto pWindow = windowFactory.generateWindow(wCreateInfo);
-		auto reqInstanceExt = windowFactory.getRequiredInstanceExt();
+		auto requiredInstanceExt = windowFactory.getRequiredInstanceExt();
 
 		VulkanInstance instanceFactory;
 
@@ -28,11 +28,16 @@ namespace vkr
 
 		VulkanInstanceCreateInfo iCreateInfo;
 		iCreateInfo.appInfo = instanceFactory.ApplicationInfo(createInfo.appName, createInfo.appVersion, createInfo.engineName, createInfo.engineVersion);
-		iCreateInfo.instanceExtensions = &reqInstanceExt;
-		iCreateInfo.validationLayers = &validationLayers;
-		if (DebugMode)
+		iCreateInfo.instanceExtensions = &requiredInstanceExt;
+		if (createInfo.requestedInstanceExtensions.size() > 0)
 		{
-			iCreateInfo.validationEnabled;
+			iCreateInfo.instanceExtensions->reserve(iCreateInfo.instanceExtensions->size() + createInfo.requestedInstanceExtensions.size());
+			iCreateInfo.instanceExtensions->insert(iCreateInfo.instanceExtensions->end(), createInfo.requestedInstanceExtensions.begin(), createInfo.requestedInstanceExtensions.end());
+		}
+		iCreateInfo.validationLayers = &validationLayers;
+		if (createInfo.ValidationEnabled)
+		{
+			iCreateInfo.validationEnabled = createInfo.ValidationEnabled;
 			iCreateInfo.validationInfo = 
 			{
 				instanceFactory.debugInfo() 
@@ -54,7 +59,7 @@ namespace vkr
 		VulkanPhysicalDevice pDeviceFactory;
 
 		VulkanPhysicalDeviceCreateInfo pdCreateInfo;
-		pdCreateInfo.compelledDevice = createInfo.compelledDevice;
+		pdCreateInfo.compelledDevice = createInfo.requestedPhysicalDevice;
 		pdCreateInfo.pInstance = instancePair.instance.get();
 		pdCreateInfo.pSurface = pSurface.get();
 		pdCreateInfo.deviceExtensions = &createInfo.requestedDeviceExtensions;
@@ -64,7 +69,7 @@ namespace vkr
 		VulkanLogicalDevice lDeviceFactory;
 
 		VulkanLogicalDeviceCreateInfo ldCreateInfo;
-		ldCreateInfo.ValidationEnabled = DebugMode;
+		ldCreateInfo.ValidationEnabled = createInfo.ValidationEnabled;
 		ldCreateInfo.PhysicalDevice = pPhysicalDevice.get();
 		ldCreateInfo.deviceExtensions = &createInfo.requestedDeviceExtensions;
 		ldCreateInfo.validationLayers = &validationLayers;

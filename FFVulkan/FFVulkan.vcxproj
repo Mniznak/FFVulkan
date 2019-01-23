@@ -86,6 +86,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>F:\Vulkan\1.1.85.0\Include;C:\Users\User\source\repos\FFVulkan\FFVulkan\Libraries\glfw-3.2.1.bin.WIN64\include;C:\Users\User\source\repos\FFVulkan\FFVulkan\Libraries\glm;C:\Users\User\source\repos\FFVulkan\FFVulkan\Libraries\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>F:\Vulkan\1.1.85.0\Lib;C:\Users\User\source\repos\FFVulkan\FFVulkan\Libraries\glfw-3.2.1.bin.WIN64\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

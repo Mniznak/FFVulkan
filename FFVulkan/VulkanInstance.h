@@ -19,12 +19,12 @@ namespace vkr
 
 	struct smartVkDebugMsger
 	{
-		smartVkDebugMsger(const smartVkInstance* _pInstance);
-		smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, const smartVkInstance* _pInstance);
+		smartVkDebugMsger(const VkInstance _pInstance);
+		smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, const VkInstance _pInstance);
 		~smartVkDebugMsger();
 		VkDebugUtilsMessengerEXT pHandle = nullptr;
 		VulkanAllocator pAllocator = nullptr;
-		const smartVkInstance* pInstance = nullptr;
+		const VkInstance pInstance = nullptr;
 	};
 	using pSmartVkDebugMsger = std::unique_ptr<smartVkDebugMsger>;
 
