@@ -3,9 +3,9 @@
 
 
 #ifdef DEBUG
-const bool DebugMode = false;
-#else
 const bool DebugMode = true;
+#else
+const bool DebugMode = false;
 #endif
 
 

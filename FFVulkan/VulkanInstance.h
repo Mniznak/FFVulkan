@@ -10,7 +10,7 @@ namespace vkr
 	struct smartVkInstance
 	{
 		smartVkInstance();
-		smartVkInstance(VkInstance _pHandle, VulkanAllocator _pAllocator);
+		smartVkInstance(VulkanAllocator _pAllocator = nullptr, VkInstance _pHandle = nullptr);
 		~smartVkInstance();
 		VkInstance pHandle = nullptr;
 		VulkanAllocator pAllocator = nullptr;
@@ -20,7 +20,7 @@ namespace vkr
 	struct smartVkDebugMsger
 	{
 		smartVkDebugMsger(const VkInstance _pInstance);
-		smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, const VkInstance _pInstance);
+		smartVkDebugMsger(const VkInstance _pInstance, VulkanAllocator _pAllocator, VkDebugUtilsMessengerEXT _pHandle);
 		~smartVkDebugMsger();
 		VkDebugUtilsMessengerEXT pHandle = nullptr;
 		VulkanAllocator pAllocator = nullptr;
@@ -39,6 +39,7 @@ namespace vkr
 		std::vector<const char *>* instanceExtensions;
 		std::vector<const char *>* validationLayers;
 		ValidationLayerCreateInfo validationInfo = {};
+		VulkanAllocator instanceAllocator, debugAllocator;
 		bool validationEnabled = false;
 	};
 

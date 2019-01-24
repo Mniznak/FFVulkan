@@ -27,6 +27,8 @@ namespace vkr
 		std::vector<const char*> validationLayers = createInfo.requestedLayers;
 
 		VulkanInstanceCreateInfo iCreateInfo;
+		iCreateInfo.instanceAllocator = createInfo.instanceAllocator;
+		iCreateInfo.debugAllocator = createInfo.debugAllocator;
 		iCreateInfo.appInfo = instanceFactory.ApplicationInfo(createInfo.appName, createInfo.appVersion, createInfo.engineName, createInfo.engineVersion);
 		iCreateInfo.instanceExtensions = &requiredInstanceExt;
 		if (createInfo.requestedInstanceExtensions.size() > 0)
@@ -51,6 +53,7 @@ namespace vkr
 		VulkanSurface surfaceFactory;
 
 		VulkanSurfaceCreateInfo sCreateInfo;
+		sCreateInfo.SurfaceAllocator = createInfo.surfaceAllocator;
 		sCreateInfo.pInstance = instancePair.instance.get();
 		sCreateInfo.pWindow = pWindow.get();
 
@@ -69,8 +72,9 @@ namespace vkr
 		VulkanLogicalDevice lDeviceFactory;
 
 		VulkanLogicalDeviceCreateInfo ldCreateInfo;
+		ldCreateInfo.logicalDeviceAllocator = createInfo.logicalDeviceAllocator;
 		ldCreateInfo.ValidationEnabled = createInfo.ValidationEnabled;
-		ldCreateInfo.PhysicalDevice = pPhysicalDevice.get();
+		ldCreateInfo.physicalDevice = pPhysicalDevice.get();
 		ldCreateInfo.deviceExtensions = &createInfo.requestedDeviceExtensions;
 		ldCreateInfo.validationLayers = &validationLayers;
 

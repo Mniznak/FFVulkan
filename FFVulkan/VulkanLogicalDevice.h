@@ -20,7 +20,7 @@ namespace vkr
 
 	struct smartVkDevice
 	{
-		smartVkDevice(VkDevice _pHandle = nullptr, VulkanAllocator _pAllocator = nullptr);
+		smartVkDevice(VulkanAllocator _pAllocator = nullptr, VkDevice _pHandle = nullptr, DeviceQueues _deviceQueues = {});
 		~smartVkDevice();
 		VkDevice pHandle = nullptr;
 		VulkanAllocator pAllocator = nullptr;
@@ -30,9 +30,10 @@ namespace vkr
 
 	struct VulkanLogicalDeviceCreateInfo
 	{
-		const smartVkPhysicalDevice* PhysicalDevice = nullptr;
+		const smartVkPhysicalDevice* physicalDevice = nullptr;
 		const std::vector<const char*>* validationLayers = nullptr;
 		std::vector<const char*>* deviceExtensions = nullptr;
+		VulkanAllocator logicalDeviceAllocator = nullptr;
 		bool ValidationEnabled = false;
 	};
 

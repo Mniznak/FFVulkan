@@ -39,7 +39,7 @@ namespace vkr
 		return n < x.size();
 	}
 
-	smartVkDevice::smartVkDevice(VkDevice _pHandle, VulkanAllocator _pAllocator)
+	smartVkDevice::smartVkDevice(VulkanAllocator _pAllocator, VkDevice _pHandle, DeviceQueues _deviceQueues) : pAllocator(_pAllocator), pHandle(_pHandle), deviceQueues(_deviceQueues)
 	{
 	}
 	smartVkDevice::~smartVkDevice()
@@ -59,18 +59,19 @@ namespace vkr
 
 	pSmartVkDevice VulkanLogicalDevice::generateLogicalDevice(VulkanLogicalDeviceCreateInfo & createInfo)
 	{
-		pSmartVkDevice state = std::make_unique<smartVkDevice>();
+		VkDevice logicalDevice;
+		//pSmartVkDevice logicalDevice = std::make_unique<smartVkDevice>(createInfo.logicalDeviceAllocator, nullptr);
 
 		std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
 		std::set<uint32_t> uniqueQueueFamilies;
-		if (createInfo.PhysicalDevice->QFI.graphicsFamily.has_value())
-			uniqueQueueFamilies.insert(createInfo.PhysicalDevice->QFI.graphicsFamily.value());
-		if (createInfo.PhysicalDevice->QFI.presentFamily.has_value())
-			uniqueQueueFamilies.insert(createInfo.PhysicalDevice->QFI.presentFamily.value());
-		if (createInfo.PhysicalDevice->QFI.transferFamily.has_value())
-			uniqueQueueFamilies.insert(createInfo.PhysicalDevice->QFI.transferFamily.value());
-		if (createInfo.PhysicalDevice->QFI.computeFamily.has_value())
-			uniqueQueueFamilies.insert(createInfo.PhysicalDevice->QFI.computeFamily.value());
+		if (createInfo.physicalDevice->QFI.graphicsFamily.has_value())
+			uniqueQueueFamilies.insert(createInfo.physicalDevice->QFI.graphicsFamily.value());
+		if (createInfo.physicalDevice->QFI.presentFamily.has_value())
+			uniqueQueueFamilies.insert(createInfo.physicalDevice->QFI.presentFamily.value());
+		if (createInfo.physicalDevice->QFI.transferFamily.has_value())
+			uniqueQueueFamilies.insert(createInfo.physicalDevice->QFI.transferFamily.value());
+		if (createInfo.physicalDevice->QFI.computeFamily.has_value())
+			uniqueQueueFamilies.insert(createInfo.physicalDevice->QFI.computeFamily.value());
 
 		float queuePriority = 1.0f;
 
@@ -104,14 +105,15 @@ namespace vkr
 		else
 			cInfo.enabledLayerCount = 0;
 
-		TEST(vkCreateDevice(createInfo.PhysicalDevice->pHandle, &cInfo, state->pAllocator, &state->pHandle));
+		TEST(vkCreateDevice(createInfo.physicalDevice->pHandle, &cInfo, createInfo.logicalDeviceAllocator, &logicalDevice));
 
-		vkGetDeviceQueue(state->pHandle, createInfo.PhysicalDevice->QFI.graphicsFamily.value(), 0, &state->deviceQueues.pGraphicsQueue);
-		vkGetDeviceQueue(state->pHandle, createInfo.PhysicalDevice->QFI.presentFamily.value(), 0, &state->deviceQueues.pPresentQueue);
-		vkGetDeviceQueue(state->pHandle, createInfo.PhysicalDevice->QFI.transferFamily.value(), 0, &state->deviceQueues.pTransferQueue);
-		vkGetDeviceQueue(state->pHandle, createInfo.PhysicalDevice->QFI.computeFamily.value(), 0, &state->deviceQueues.pComputeQueue);
+		DeviceQueues deviceQueues;
+		vkGetDeviceQueue(logicalDevice, createInfo.physicalDevice->QFI.graphicsFamily.value(), 0, &deviceQueues.pGraphicsQueue);
+		vkGetDeviceQueue(logicalDevice, createInfo.physicalDevice->QFI.presentFamily.value(), 0, &deviceQueues.pPresentQueue);
+		vkGetDeviceQueue(logicalDevice, createInfo.physicalDevice->QFI.transferFamily.value(), 0, &deviceQueues.pTransferQueue);
+		vkGetDeviceQueue(logicalDevice, createInfo.physicalDevice->QFI.computeFamily.value(), 0, &deviceQueues.pComputeQueue);
 
-		return std::move(state);
+		return std::make_unique<smartVkDevice>(createInfo.logicalDeviceAllocator, logicalDevice, deviceQueues);
 	}
 
 	

@@ -6,7 +6,7 @@ namespace vkr
 	{
 	}
 
-	smartVkInstance::smartVkInstance(VkInstance _pHandle, VulkanAllocator _pAllocator) : pHandle(_pHandle), pAllocator(_pAllocator)
+	smartVkInstance::smartVkInstance(VulkanAllocator _pAllocator, VkInstance _pHandle) : pAllocator(_pAllocator), pHandle(_pHandle)
 	{
 	}
 
@@ -20,8 +20,8 @@ namespace vkr
 	{
 	}
 
-	smartVkDebugMsger::smartVkDebugMsger(VkDebugUtilsMessengerEXT _pHandle, VulkanAllocator _pAllocator, VkInstance _pInstance) :
-		pHandle(_pHandle), pAllocator(_pAllocator), pInstance(_pInstance)
+	smartVkDebugMsger::smartVkDebugMsger(VkInstance _pInstance, VulkanAllocator _pAllocator, VkDebugUtilsMessengerEXT _pHandle) :
+		pInstance(_pInstance), pAllocator(_pAllocator), pHandle(_pHandle)
 	{
 	}
 
@@ -45,8 +45,8 @@ namespace vkr
 
 	GeneratedInstance VulkanInstance::generateInstance(VulkanInstanceCreateInfo & createInfo)
 	{
-		pSmartVkInstance instance = std::make_unique<smartVkInstance>();
-		pSmartVkDebugMsger debugMsger;
+		VkInstance instance;
+		VkDebugUtilsMessengerEXT debugMsger;
 
 		VkInstanceCreateInfo instInfo = {};
 		instInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
@@ -56,19 +56,17 @@ namespace vkr
 		instInfo.enabledExtensionCount = static_cast<uint32_t>(createInfo.instanceExtensions->size());
 		instInfo.ppEnabledExtensionNames = createInfo.instanceExtensions->data();
 
-		TEST(vkCreateInstance(&instInfo, instance->pAllocator, &instance->pHandle));
+		TEST(vkCreateInstance(&instInfo, createInfo.instanceAllocator, &instance));
 
 		if (createInfo.validationEnabled)
 		{
-			debugMsger = std::make_unique<smartVkDebugMsger>(instance->pHandle);
-
 			if (!createInfo.validationInfo.debugUtilCreateInfo.pfnUserCallback)
 				createInfo.validationInfo.debugUtilCreateInfo.pfnUserCallback = debugCallback;
 
-			TEST(CreateDebugUtilsMessengerEXT(instance->pHandle, &createInfo.validationInfo.debugUtilCreateInfo, debugMsger->pAllocator, &debugMsger->pHandle));
+			TEST(CreateDebugUtilsMessengerEXT(instance, &createInfo.validationInfo.debugUtilCreateInfo, createInfo.debugAllocator, &debugMsger));
 		}
-
-		return { std::move(instance), std::move(debugMsger) };
+		
+		return { std::make_unique<smartVkInstance>(createInfo.instanceAllocator, instance), std::make_unique<smartVkDebugMsger>(instance, createInfo.debugAllocator, debugMsger) };
 	}
 
 	VkApplicationInfo VulkanInstance::ApplicationInfo(const char* appName, version3i appVersion, const char* engineName, version3i engineVersion)

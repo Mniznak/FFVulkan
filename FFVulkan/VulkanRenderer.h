@@ -12,14 +12,34 @@ namespace vkr
 		windowExtent windowSize = { 800, 600 };
 	};
 
-	struct VulkanRendererOptionalInfo
+	struct VulkanRendererOptionalInstance
 	{
 		const char* engineName = "No Engine";
 		version3i engineVersion = { 1,0,0 };
 		std::vector<const char*> requestedInstanceExtensions = {};
 		std::vector<const char*> requestedLayers = {};
+		VulkanAllocator instanceAllocator = nullptr;
+		VulkanAllocator debugAllocator = nullptr;
+	};
+
+	struct VulkanRendererOptionalSurface
+	{
+		VulkanAllocator logicalSurfaceAllocator = nullptr;
+	};
+
+	struct VulkanRendererOptionalDevice
+	{
 		std::vector<const char*> requestedDeviceExtensions = {};
 		VkPhysicalDevice requestedPhysicalDevice = VK_NULL_HANDLE;
+		VulkanAllocator logicalDeviceAllocator = nullptr;
+	};
+
+	struct VulkanRendererOptionalInfo
+	{
+		VulkanRendererOptionalInstance optionalInstanceInfo = {};
+		VulkanRendererOptionalSurface optionalSurfaceInfo = {};
+		VulkanRendererOptionalDevice optionalDeviceInfo = {};
+		
 		bool ValidationEnabled = false;
 	};
 

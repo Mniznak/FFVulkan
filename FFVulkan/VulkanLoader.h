@@ -21,6 +21,10 @@ namespace vkr
 		std::vector<const char*> requestedLayers = {};
 		VkPhysicalDevice requestedPhysicalDevice = VK_NULL_HANDLE;
 		std::vector<const char*> requestedDeviceExtensions = {};
+		VulkanAllocator instanceAllocator = nullptr; 
+		VulkanAllocator debugAllocator = nullptr;
+		VulkanAllocator surfaceAllocator = nullptr;
+		VulkanAllocator logicalDeviceAllocator = nullptr;
 		bool ValidationEnabled = false;
 	};
 

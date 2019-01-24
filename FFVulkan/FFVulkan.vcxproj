@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="VulkanCommandPool.cpp" />
     <ClCompile Include="VulkanInstance.cpp" />
     <ClCompile Include="VulkanLoader.cpp" />
     <ClCompile Include="VulkanLogicalDevice.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="VulkanWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="VulkanCommandPool.h" />
     <ClInclude Include="VulkanCommon.h" />
     <ClInclude Include="VulkanInstance.h" />
     <ClInclude Include="VulkanLoader.h" />

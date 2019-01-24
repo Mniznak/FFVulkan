@@ -4,14 +4,14 @@
 namespace vkr
 {
 
-	smartVkSurfaceKHR::smartVkSurfaceKHR(const smartVkInstance * _pInstance, VkSurfaceKHR _pHandle, VulkanAllocator _pAllocator) :
-		pInstance(_pInstance), pHandle(_pHandle), pAllocator(_pAllocator)
+	smartVkSurfaceKHR::smartVkSurfaceKHR(const VkInstance _pInstance, VulkanAllocator _pAllocator, VkSurfaceKHR _pHandle) :
+		pInstance(_pInstance), pAllocator(_pAllocator), pHandle(_pHandle)
 	{
 	}
 	smartVkSurfaceKHR::~smartVkSurfaceKHR()
 	{
 		if (pHandle && pInstance)
-			vkDestroySurfaceKHR(pInstance->pHandle, pHandle, pAllocator);
+			vkDestroySurfaceKHR(pInstance, pHandle, pAllocator);
 	}
 
 	VulkanSurface::VulkanSurface()
@@ -25,11 +25,11 @@ namespace vkr
 
 	pSmartVkSurfaceKHR VulkanSurface::generateSurface(VulkanSurfaceCreateInfo& createInfo)
 	{
-		pSmartVkSurfaceKHR state = std::make_unique<smartVkSurfaceKHR>(createInfo.pInstance, nullptr, nullptr);
+		VkSurfaceKHR surface;
 
-		TEST(glfwCreateWindowSurface(state->pInstance->pHandle, createInfo.pWindow->pHandle, state->pAllocator, &state->pHandle));
+		TEST(glfwCreateWindowSurface(createInfo.pInstance->pHandle, createInfo.pWindow->pHandle, createInfo.SurfaceAllocator, &surface));
 
-		return std::move(state);
+		return std::make_unique<smartVkSurfaceKHR>(createInfo.pInstance->pHandle, createInfo.SurfaceAllocator, surface);
 	}
 	
 }
