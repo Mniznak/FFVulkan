@@ -26,61 +26,66 @@ namespace vkr
 
 	pSmartVkPhysicalDevice VulkanPhysicalDevice::generatePhysicalDevice(VulkanPhysicalDeviceCreateInfo & createInfo)
 	{
-		pSmartVkPhysicalDevice state = std::make_unique<smartVkPhysicalDevice>();
+		smartVkPhysicalDevice state;
 
 		uint32_t dCount = 0;
-		vkEnumeratePhysicalDevices(createInfo.pInstance->pHandle, &dCount, nullptr);
+		vkEnumeratePhysicalDevices(createInfo.pInstance, &dCount, nullptr);
 		std::vector<VkPhysicalDevice> devices(dCount);
-		vkEnumeratePhysicalDevices(createInfo.pInstance->pHandle, &dCount, devices.data());
+		vkEnumeratePhysicalDevices(createInfo.pInstance, &dCount, devices.data());
+
+		std::cout << "\nPhysical Device Count: " << dCount << '\n';
+		
 
 		if (createInfo.compelledDevice != VK_NULL_HANDLE)
 		{
-			if (isDeviceSuitable(createInfo.compelledDevice, createInfo))
-			{
-				buildDeviceSignature(state, createInfo.compelledDevice, createInfo.pSurface->pHandle);
-				//state->pHandle = createInfo.compelledDevice;
-				//state->SCSD = querySwapChainSupport(createInfo.compelledDevice, createInfo.pSurface->pHandle);
-				//state->QFI = findQueueFamilies(createInfo.compelledDevice, createInfo.pSurface->pHandle);
-			}
+			auto deviceOptional = isDeviceSuitable(createInfo.compelledDevice, createInfo);
+			if (deviceOptional.has_value())
+				state = deviceOptional.value();
 		}
-		if (state->pHandle == VK_NULL_HANDLE)
+
+		if (state.pHandle == VK_NULL_HANDLE)
 			for (const auto& device : devices)
 			{
-				if (isDeviceSuitable(device, createInfo))
+				auto deviceOptional = isDeviceSuitable(device, createInfo);
+				if (deviceOptional.has_value())
 				{
-					buildDeviceSignature(state, device, createInfo.pSurface->pHandle);
-					//state->pHandle = device;
-					//state->SCSD = querySwapChainSupport(device, createInfo.pSurface->pHandle);
-					//state->QFI = findQueueFamilies(device, createInfo.pSurface->pHandle);
+					state = deviceOptional.value();
 					break;
 				}
 			}
-		TEST(state->pHandle != VK_NULL_HANDLE);
+		
+		TEST(state.pHandle != VK_NULL_HANDLE);
 
-		return std::move(state);
+		return std::make_unique<smartVkPhysicalDevice>(state);
 	}
 
-	bool VulkanPhysicalDevice::isDeviceSuitable(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo & createInfo)
+	std::optional<smartVkPhysicalDevice> VulkanPhysicalDevice::isDeviceSuitable(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo & createInfo)
 	{
-		QueueFamilyIndices indices = findQueueFamilies(device, createInfo.pSurface->pHandle);
+		smartVkPhysicalDevice physicalDevice;
+
+		QueueFamilyIndices indices = findQueueFamilies(device, createInfo.pSurface);
 
 		bool extensionsSupported = checkDeviceExtensionSupport(device, createInfo);
 		bool swapChainAdequate = false;
 
+		SwapChainSupportDetails swapChainSupport;
+
 		if (extensionsSupported)
 		{
-			SwapChainSupportDetails swapChainSupport = querySwapChainSupport(device, createInfo.pSurface->pHandle);
+			swapChainSupport = querySwapChainSupport(device, createInfo.pSurface);
 			swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
 		}
 
-		return indices.isComplete() && extensionsSupported && swapChainAdequate;
-	}
+		if (indices.isComplete() && extensionsSupported && swapChainAdequate)
+		{
+			physicalDevice.pHandle = device;
+			physicalDevice.SCSD = swapChainSupport;
+			physicalDevice.QFI = indices;
+			return physicalDevice;
+		}
+		else
+			return std::nullopt;
 
-	void VulkanPhysicalDevice::buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, const VkPhysicalDevice& device, const VkSurfaceKHR& surface)
-	{
-		pPhysicalDevice->pHandle = device;
-		pPhysicalDevice->SCSD = querySwapChainSupport(device, surface);
-		pPhysicalDevice->QFI = findQueueFamilies(device, surface);
 	}
 
 	bool VulkanPhysicalDevice::checkDeviceExtensionSupport(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo& createInfo)
@@ -136,43 +141,48 @@ namespace vkr
 		std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
 		vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, queueFamilies.data());
 
+		indices.QueueCount.reserve(queueFamilyCount);
+		indices.QueueFlags.reserve(queueFamilyCount);
+
 		int i = 0;
 		for (const auto& queueFamily : queueFamilies)
 		{
+			indices.QueueCount.push_back(queueFamilies[i].queueCount);
+			indices.QueueFlags.push_back(queueFamilies[i].queueFlags);
 
 			if (queueFamily.queueCount > 0 &&
 				!indices.graphicsFamily.has_value() &&
 				queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT)
 			{
-				indices.graphicsFamily = i;
+				setIndices(indices.graphicsFamily, indices.graphicsFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
 				!indices.transferFamily.has_value() &&
 				queueFamily.queueFlags & VK_QUEUE_TRANSFER_BIT)
 			{
-				indices.transferFamily = i;
+				setIndices(indices.transferFamily, indices.transferFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
 				!indices.computeFamily.has_value() &&
 				queueFamily.queueFlags & VK_QUEUE_COMPUTE_BIT)
 			{
-				indices.computeFamily = i;
+				setIndices(indices.computeFamily, indices.computeFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
 				!(queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT) &&
 				queueFamily.queueFlags & VK_QUEUE_TRANSFER_BIT)
 			{
-				indices.transferFamily = i;
+				setIndices(indices.transferFamily, indices.transferFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
 				!(queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT) &&
 				queueFamily.queueFlags & VK_QUEUE_COMPUTE_BIT)
 			{
-				indices.computeFamily = i;
+				setIndices(indices.computeFamily, indices.computeFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
@@ -180,7 +190,7 @@ namespace vkr
 				!(queueFamily.queueFlags & VK_QUEUE_COMPUTE_BIT) &&
 				queueFamily.queueFlags & VK_QUEUE_TRANSFER_BIT)
 			{
-				indices.transferFamily = i;
+				setIndices(indices.transferFamily, indices.transferFamilyQueueCount, i, queueFamily);
 			}
 
 			if (queueFamily.queueCount > 0 &&
@@ -188,18 +198,43 @@ namespace vkr
 				!(queueFamily.queueFlags & VK_QUEUE_TRANSFER_BIT) &&
 				queueFamily.queueFlags == VK_QUEUE_COMPUTE_BIT)
 			{
-				indices.computeFamily = i;
+				setIndices(indices.computeFamily, indices.computeFamilyQueueCount, i, queueFamily);
 			}
 
 			VkBool32 presentSupport = false;
 			vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface, &presentSupport);
+			if (presentSupport)
+				std::cout << "Present Support on Qfamily: " << i << '\n';
 
 			if (queueFamily.queueCount > 0 && presentSupport && !indices.presentFamily.has_value())
-				indices.presentFamily = i;
+				setIndices(indices.presentFamily, indices.presentFamilyQueueCount, i, queueFamily);
 
 			i++;
 		}
+
+		std::cout << "\n1: Graphics Bit\n2: Compute Bit\n4: Transfer Bit\n8: Sparse Binding Bit\n\n";
+
+		std::cout << "\nNumber of Queue Families: " << queueFamilies.size() << '\n';
+		for (int i = 0; i < queueFamilies.size(); i++)
+		{
+			std::cout << "Queue Family: " << i << " :: Queues: " << indices.QueueCount[i] << " :: Flags: " << indices.QueueFlags[i] << '\n';
+		}
+		std::cout << '\n';
+
+		std::cout << "Graphics Family: " << indices.graphicsFamily.value() << " :: Queues: " << indices.graphicsFamilyQueueCount << '\n';
+		std::cout << "Presentation Family: " << indices.presentFamily.value() << " :: Queues: " << indices.presentFamilyQueueCount << '\n';
+		std::cout << "Transfer Family: " << indices.transferFamily.value() << " :: Queues: " << indices.transferFamilyQueueCount << '\n';
+		std::cout << "Compute Family: " << indices.computeFamily.value() << " :: Queues: " << indices.computeFamilyQueueCount << '\n';
+
+
+
 		return indices;
+	}
+
+	void VulkanPhysicalDevice::setIndices(std::optional<uint32_t> & QFI, uint32_t& QueueCount, const uint32_t QueueFamilyIndex, const VkQueueFamilyProperties & QueueFamilyProperties)
+	{
+		QFI = QueueFamilyIndex;
+		QueueCount = QueueFamilyProperties.queueCount;
 	}
 
 	

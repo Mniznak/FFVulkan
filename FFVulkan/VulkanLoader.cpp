@@ -63,8 +63,8 @@ namespace vkr
 
 		VulkanPhysicalDeviceCreateInfo pdCreateInfo;
 		pdCreateInfo.compelledDevice = createInfo.requestedPhysicalDevice;
-		pdCreateInfo.pInstance = instancePair.instance.get();
-		pdCreateInfo.pSurface = pSurface.get();
+		pdCreateInfo.pInstance = instancePair.instance.get()->pHandle;
+		pdCreateInfo.pSurface = pSurface.get()->pHandle;
 		pdCreateInfo.deviceExtensions = &createInfo.requestedDeviceExtensions;
 
 		auto pPhysicalDevice = pDeviceFactory.generatePhysicalDevice(pdCreateInfo);

@@ -51,6 +51,9 @@
     <ClCompile Include="VulkanCommandPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="State_VulkanWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VulkanCommon.h">
@@ -81,6 +84,9 @@
       <Filter>Loader\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VulkanCommandPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State_VulkanWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

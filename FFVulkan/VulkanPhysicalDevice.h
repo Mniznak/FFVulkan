@@ -9,10 +9,18 @@ namespace vkr
 {
 	struct QueueFamilyIndices
 	{
+		std::vector<uint32_t> QueueCount;
+		std::vector<VkQueueFlags> QueueFlags;
+
 		std::optional<uint32_t> graphicsFamily = std::nullopt;
 		std::optional<uint32_t> presentFamily = std::nullopt;
 		std::optional<uint32_t> computeFamily = std::nullopt;
 		std::optional<uint32_t> transferFamily = std::nullopt;
+
+		uint32_t graphicsFamilyQueueCount = 0;
+		uint32_t presentFamilyQueueCount = 0;
+		uint32_t computeFamilyQueueCount = 0;
+		uint32_t transferFamilyQueueCount = 0;
 
 		bool isComplete() const;
 	};
@@ -27,8 +35,8 @@ namespace vkr
 	struct VulkanPhysicalDeviceCreateInfo
 	{
 		VkPhysicalDevice compelledDevice = VK_NULL_HANDLE;
-		const smartVkInstance* pInstance = nullptr;
-		const smartVkSurfaceKHR* pSurface = nullptr;
+		VkInstance pInstance = nullptr;
+		VkSurfaceKHR pSurface = nullptr;
 		std::vector<const char*>* deviceExtensions = {};
 	};
 
@@ -39,7 +47,6 @@ namespace vkr
 		VkPhysicalDevice pHandle = VK_NULL_HANDLE;
 		SwapChainSupportDetails SCSD = {};
 		QueueFamilyIndices QFI = {};
-		//std::vector<const char*> deviceExtensions = {};
 	};
 	using pSmartVkPhysicalDevice = std::unique_ptr<smartVkPhysicalDevice>;
 
@@ -50,11 +57,12 @@ namespace vkr
 		~VulkanPhysicalDevice();
 		pSmartVkPhysicalDevice generatePhysicalDevice(VulkanPhysicalDeviceCreateInfo& createInfo);
 	private:
-		bool isDeviceSuitable(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo & createInfo);
-		void buildDeviceSignature(pSmartVkPhysicalDevice& pPhysicalDevice, const VkPhysicalDevice& device, const VkSurfaceKHR& surface);
+		std::optional<smartVkPhysicalDevice> isDeviceSuitable(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo & createInfo);
+		void buildDeviceSignature(smartVkPhysicalDevice& pPhysicalDevice, const VkPhysicalDevice& device, const VkSurfaceKHR& surface);
 		bool checkDeviceExtensionSupport(VkPhysicalDevice device, VulkanPhysicalDeviceCreateInfo& createInfo);
 		SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device, const VkSurfaceKHR & surface);
 		QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device, const VkSurfaceKHR & surface);
+		void setIndices(std::optional<uint32_t> & QFI, uint32_t& QueueCount, const uint32_t QueueFamilyIndex, const VkQueueFamilyProperties & QueueFamilyProperties);
 	};
 }
 #endif
